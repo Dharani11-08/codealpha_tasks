@@ -39,11 +39,15 @@ The project is designed for beginners to understand packet sniffing, traffic ana
 ## Project Structure
 
 ```text
-networksniffer/
+CodeAlpha_Network_Sniffer
 │
 ├── network_sniffer.py
 ├── README.md
 ├── output
+     ├──Network Sniffer Output1.jpeg
+     ├──Network Sniffer Output2.jpeg
+     ├──Network Sniffer Output3.jpeg
+
 ```
 
 ---
