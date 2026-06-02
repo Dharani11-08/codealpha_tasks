@@ -57,8 +57,8 @@ CodeAlpha_Network_Sniffer
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/Network-Sniffer-Scapy.git
-cd Network-Sniffer-Scapy
+git clone https://github.com/yourusername/CodeAlpha_Network_Sniffer.git
+cd CodeAlpha_Network_Sniffer
 ```
 
 ---
@@ -114,7 +114,7 @@ sudo python3 sniffer1.py
 Windows:
 
 ```bash
-python sniffer1.py
+python network_sniffer.py
 ```
 
 ---
