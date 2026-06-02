@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login Authentication System</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, sans-serif;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    overflow:hidden;
+}
+
+/* Background Text */
+.bg-text{
+    position:absolute;
+    font-size:70px;
+    font-weight:bold;
+    color:rgba(255,255,255,0.08);
+    text-transform:uppercase;
+    letter-spacing:5px;
+    text-align:center;
+}
+
+/* Login Box */
+.login-box{
+    width:350px;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(10px);
+    border-radius:20px;
+    padding:30px;
+    box-shadow:0 8px 32px rgba(0,0,0,0.2);
+    border:1px solid rgba(255,255,255,0.2);
+    z-index:1;
+}
+
+.login-box h2{
+    text-align:center;
+    color:white;
+    margin-bottom:25px;
+}
+
+.input-group{
+    margin-bottom:18px;
+}
+
+.input-group label{
+    color:white;
+    display:block;
+    margin-bottom:8px;
+    font-weight:bold;
+}
+
+.input-group input{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:10px;
+    outline:none;
+    font-size:16px;
+}
+
+.show-password{
+    color:white;
+    margin-bottom:15px;
+    font-size:14px;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:10px;
+    background:#00c6ff;
+    color:white;
+    font-size:18px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    transform:scale(1.03);
+}
+
+#message{
+    text-align:center;
+    margin-top:15px;
+    font-weight:bold;
+}
+
+.footer{
+    text-align:center;
+    color:white;
+    margin-top:15px;
+    font-size:13px;
+}
+
+@media(max-width:400px){
+    .login-box{
+        width:90%;
+    }
+
+    .bg-text{
+        font-size:35px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="bg-text">
+    LOGIN SYSTEM
+</div>
+
+<div class="login-box">
+    <h2>Login Authentication</h2>
+
+    <div class="input-group">
+        <label>Username</label>
+        <input type="text" id="username" placeholder="Enter Username">
+    </div>
+
+    <div class="input-group">
+        <label>Password</label>
+        <input type="password" id="password" placeholder="Enter Password">
+    </div>
+
+    <div class="show-password">
+        <input type="checkbox" onclick="showPassword()">
+        Show Password
+    </div>
+
+    <button onclick="login()">Login</button>
+
+    <p id="message"></p>
+
+    <div class="footer">
+        Secure Login Authentication
+    </div>
+</div>
+
+<script>
+// Demo Credentials
+const usernameDB = "admin";
+const passwordDB = "admin123";
+
+function login(){
+    let username = document.getElementById("username").value.trim();
+    let password = document.getElementById("password").value.trim();
+    let message = document.getElementById("message");
+
+    // Empty field validation
+    if(username === "" || password === ""){
+        message.style.color = "yellow";
+        message.innerHTML = "Please enter username and password!";
+        return;
+    }
+
+    // Login check
+    if(username === usernameDB && password === passwordDB){
+        message.style.color = "lightgreen";
+        message.innerHTML = "Login Successful ✅";
+    } 
+    else{
+        message.style.color = "red";
+        message.innerHTML = "Invalid Username or Password ❌";
+    }
+}
+
+// Show Password
+function showPassword(){
+    let password = document.getElementById("password");
+
+    if(password.type === "password"){
+        password.type = "text";
+    } else {
+        password.type = "password";
+    }
+}
+</script>
+</body>
+</html>
+
